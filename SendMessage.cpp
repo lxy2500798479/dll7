@@ -7,7 +7,7 @@
 // =============================================================
 void SendTextMessage(const std::wstring& wxid, const std::wstring& msg)
 {
-    HMODULE hWeChatWin = GetModuleHandle(L"WeChatWin.dll");
+    HMODULE hWeChatWin = GetModuleHandle("WeChatWin.dll");
     if (!hWeChatWin) return;
 
     auto pSendMsgMgr = (SendMsgMgr_t)((QWORD)hWeChatWin + Offsets::SendMsgMgr);
@@ -33,7 +33,7 @@ void SendTextMessage(const std::wstring& wxid, const std::wstring& msg)
 // =============================================================
 void SendTextMessage_And_Crash_With_Free(const std::wstring& wxid, const std::wstring& msg)
 {
-    HMODULE hWeChatWin = GetModuleHandle(L"WeChatWin.dll");
+    HMODULE hWeChatWin = GetModuleHandle("WeChatWin.dll");
     if (!hWeChatWin) return;
     auto pSendText = (SendText_t)((QWORD)hWeChatWin + Offsets::SendText);
     if (!pSendText) return;
@@ -52,7 +52,7 @@ void SendTextMessage_And_Crash_With_Free(const std::wstring& wxid, const std::ws
     // *** 错误的操作：尝试用我们自己DLL的 free() 来释放 ***
     // 这将导致堆损坏，因为分配和释放在不同的模块/CRT中。
     // 程序很可能会在这里立即崩溃。
-    OutputDebugString(L"即将调用 free()，准备崩溃...");
+    OutputDebugString("即将调用 free()，准备崩溃...");
     free(buffer);
 }
 

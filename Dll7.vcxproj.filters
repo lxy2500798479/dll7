@@ -33,6 +33,30 @@
     <ClInclude Include="WeChatSpy.h">
       <Filter>源文件\hooks</Filter>
     </ClInclude>
+    <ClInclude Include="DebugConsole.h">
+      <Filter>源文件\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="AsyncSender.h">
+      <Filter>源文件\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\trampoline.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\include\MinHook.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\hde64.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\pstdint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\table64.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -47,8 +71,36 @@
     <ClCompile Include="SendMessage.cpp">
       <Filter>源文件\hooks</Filter>
     </ClCompile>
+    <ClCompile Include="DebugConsole.cpp">
+      <Filter>源文件\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="TopLevelHook.cpp">
+      <Filter>源文件\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="demo.cpp">
+      <Filter>源文件\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="ReturnValueHook.cpp">
+      <Filter>源文件\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="AsyncSender.cpp">
+      <Filter>源文件\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\buffer.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\hook.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\trampoline.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\hde\hde64.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="vcpkg.json" />
+    <None Include="vcpkg-configuration.json" />
   </ItemGroup>
 </Project>

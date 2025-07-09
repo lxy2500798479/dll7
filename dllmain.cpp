@@ -1,15 +1,22 @@
 ﻿// dllmain.cpp : 定义 DLL 应用程序的入口点。
 #include "pch.h"
-
+#include "WeChatSpy.h"
 #include <windows.h>
 #include "WebServer.hpp"
-
+#include <thread>      // 包含thread以使用Sleep
+#include "AsyncSender.h"
 // 全局变量，用于保存我们DLL自己的模块句柄
 HMODULE g_hModule = NULL;
 
 // 启动Web服务的线程函数
 DWORD WINAPI MainThread(LPVOID lpParam) {
-    StartWebService(8080); // 假设我们使用8080端口
+    CreateDebugConsole();
+    Sleep(1000); // 等待控制台初始化
+
+	StartTopLevelHook(); // 启动顶层Hook
+    StartAsyncSender();
+    StartWebService(8080); // 假设我们使用8080端口  
+
     return 0;
 }
 

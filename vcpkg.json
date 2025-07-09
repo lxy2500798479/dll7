@@ -4,6 +4,7 @@
   "dependencies": [
     "crow",
     "minhook",
-    "oatpp"
+    "cpr",
+    "nlohmann-json"
   ]
 }
